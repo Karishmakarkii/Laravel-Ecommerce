@@ -1,0 +1,237 @@
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    margin-left:20px;
+    font-family:muli;
+    font-weight: lighter;
+    font-size:13px;
+    padding-bottom:5px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-family: Muli;
+    font-weight: lighter;
+    font-size: 13px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: rgb(204, 200, 200);}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content  {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: rgb(214,  167, 133);
+     border:1px  #ccc8c8;
+    }
+  .new{
+      margin: 10px 10px 10px 10px;
+  }
+ * {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 10px;
+    margin-top: -50px;
+    margin-left: -300px;
+    margin-right: -10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: #EAB543;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #EAB543;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  .div1{
+    background-color: #edece8;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    padding: 6px 10px 6px 10px;
+  }
+  .div2{
+    background-color: #edece8;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    padding: 6px 10px 6px 10px;
+  }
+  .div3{
+    background-color: #edece8;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    padding: 6px 10px 6px 10px;
+  }
+  .fa-share-alt{
+    height: 5px;
+    width: 5px;
+    margin-left: 100px;
+  }
+  .fa-share-alt:hover{
+  color: #fdcb6e;
+  }
+  .text2{
+    padding-top: 50px;
+    font-family: Raleway;
+  
+  }
+  .div1:hover{
+    background-color: #EAB543;
+    color: white;
+  }
+  .div2:hover{
+    background-color: #EAB543;
+    color: white;
+  }
+  .div3:hover{
+    background-color: #EAB543;
+    color: white;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  .fa-shipping-fast,.fa-calendar-check,.fa-store-alt,.fa-box-open{
+    color:white;
+  }
+  .btn {
+    background-color: #EAB543;
+  }
