@@ -5,7 +5,9 @@ use App\Models\Product;
 use App\Models\Post;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductsController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +25,25 @@ use App\Http\Controllers\Auth\RegisterController;
 //     return view('products' ,['products' => $products]);
 // });
 
-Route::get('/home', function() {
-    $products = Product::latest()->with('category')->get();
-    return view('home' ,compact("products"));
-});
+Route::get('/home', [ProductsController::class ,'index']);
 Route::get('/home/{slug}', function (Product $slug) {
     // $product = Product::find($id);
 return view('product', ['product' => $slug]);
 });
   
-
+// Route::get('categories/{category}', function(Category $category) {
+//     $products = Product::whereCategoryID($category->id);
+//     return $products;
+// });
 Route::get('/login' , [LoginController::class,'login']);
 Route::post('/login' , [LoginController::class,'authenticate']);
+
+// Route::get('/categories',[CategoryController::class, 'index' ]);
+Route::get('/categories/{category}',[CategoryController::class, 'show' ]);
+
+
+
+
 
     //Route Model Binding function(Product . $product) =           // $product = Product::find($id);
 
@@ -116,3 +125,8 @@ Route::post('/login' , [LoginController::class,'authenticate']);
 
 //html parsing inside the database
 //{ !! !!}print with html parsing
+
+
+//Admin routing
+Route::get('/admin/products' , [App\Http\Controllers\Admin\ProductsController::class , 'index']);
+Route::get('/admin/products/create' , [App\Http\Controllers\Admin\ProductsController::class , 'create']);
