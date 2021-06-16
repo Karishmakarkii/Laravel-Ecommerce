@@ -111,7 +111,7 @@
                                         <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                             <div class="single-product">
                                                 <div class="product-img">
-                                                    <a href="product-details.html">
+                                                    <a href="{{route('home.show' ,$product->slug)}}">
                                                         <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
                                                         <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
                                                     </a>
@@ -127,7 +127,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3><a href="product-details.html">{{ $product->product_name }}</a></h3>
+                                                    <h3><a href="{{route('home.show', $product->slug) }}">{{ $product->product_name }}</a></h3>
                                                     <div class="product-price">
                                                         <span>Rs. {{ $product->price }}</span> <br>
                                                         

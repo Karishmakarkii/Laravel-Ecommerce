@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
 use App\Models\Category;
+use Intervention\Image\Facades\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +25,20 @@ use App\Models\Category;
 //     $products = Product::all();
 //     return view('products' ,['products' => $products]);
 // });
+// Route::get('/', function()
+// {
+//     $img = Image::make('foo.jpg')->resize(300, 200);
 
-Route::get('/home', [ProductsController::class ,'index']);
-Route::get('/home/{slug}', function (Product $slug) {
-    // $product = Product::find($id);
-return view('product', ['product' => $slug]);
-});
+//     return $img->response('jpg');
+// });
+
+Route::resource('/home', ProductsController::class )->except([
+    'destroy' , 'create' , 'edit' , 'update', 'store'
+]);
+// Route::get('/home/{slug}', function (Product $slug) {
+//     // $product = Product::find($id);
+// return view('product', ['product' => $slug]);
+// });
   
 // Route::get('categories/{category}', function(Category $category) {
 //     $products = Product::whereCategoryID($category->id);
@@ -128,5 +137,13 @@ Route::get('/categories/{category}',[CategoryController::class, 'show' ]);
 
 
 //Admin routing
-Route::get('/admin/products' , [App\Http\Controllers\Admin\ProductsController::class , 'index']);
-Route::get('/admin/products/create' , [App\Http\Controllers\Admin\ProductsController::class , 'create']);
+// Route::get('/admin/products' , [App\Http\Controllers\Admin\ProductsController::class , 'index']);
+// Route::get('/admin/products/create' , [App\Http\Controllers\Admin\ProductsController::class , 'create']);
+// Route::get('/admin/products/store' , [App\Http\Controllers\Admin\ProductsController::class , 'store']);
+Route::resource('admin/products', App\Http\Controllers\Admin\ProductsController::class )->except([
+     'show'
+]);
+Route::get('/dashboard',[App\Http\Controllers\Admin\ProductsController::class,'dashboard']);
+Route::resource('admin/category', App\Http\Controllers\Admin\CategoryController::class )->except([
+    'show','destroy'
+]);

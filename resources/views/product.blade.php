@@ -3,18 +3,18 @@
     @include('includes/menu')
 @endsection
 @section('contents')
-<div class="container text-center">
+<div class="container text-center" style="margin-top:30px;">
 <div class="row">
     <div class="col-6">
-        <img src="" alt="image"/>
+        <img src="/storage/{{ $products->image }}" height="300" width="500" alt="image" alt="image"/>
     </div>
     <div class="col-6">
-        <div class="text1">
-        <h3 >{{ $product->product_name}} </h3>
-        <p>{{ $product->product_desc}}</p>
+        <div class="text1" style="margin-top: 40px;">
+        <h3 >{{ $products->product_name}} </h3>
+        <p>{{ $products->product_desc}}</p>
       </div>
       <div class="div1">
-       Rs. {{$product->price}}
+       Rs. {{$products->price}}
       </div>
       <div class="div2" >
         ADD TO SHOPPING BAG

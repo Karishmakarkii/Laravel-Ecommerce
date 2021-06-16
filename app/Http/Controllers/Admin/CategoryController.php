@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->with('category')->get();
-        return view('home' ,compact("products"));
+        $categories = Category::all();
+        // return $categories;
+        return view('admin.category.index' , compact('categories'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        // return view('admin.category.create');
     }
 
     /**
@@ -46,11 +47,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $categories = Category::all();
-        $products = Product::where('slug' , $slug)->firstorFail();
-        return view('product', compact('products','categories'));
+        //
     }
 
     /**
@@ -61,7 +60,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -73,7 +72,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        //
     }
 
     /**
@@ -86,5 +85,4 @@ class ProductsController extends Controller
     {
         //
     }
-    
 }
